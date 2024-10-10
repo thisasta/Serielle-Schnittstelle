@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="free-virtual-serial-port-tools">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/schülersoftware/02 komplette Software/02_SerialPortEmulator/free-virtual-serial-port-tools.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
