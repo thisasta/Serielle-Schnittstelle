@@ -52,7 +52,7 @@ public class PumpenSteuerung {
         int active = 0;
 
         for (int i = 0; i < statusPumpen.length; i++) {
-            int time = (statusPumpen[i] >> 4) & 0x0F;
+            int time = (statusPumpen[i] >> 4);
             if (time < 4) {
                 if (active < 4) {
                     steuerungSchalteEinAus |= (1 << i);
@@ -62,7 +62,7 @@ public class PumpenSteuerung {
         }
 
         for (int i = 0; i < statusPumpen.length && active < 4; i++) {
-            int time = (statusPumpen[i] >> 4) & 0x0F;
+            int time = (statusPumpen[i] >> 4);
             if (time == 0 && (steuerungSchalteEinAus & (1 << i)) == 0) {
                 steuerungSchalteEinAus |= (1 << i);
                 active++;
@@ -75,6 +75,7 @@ public class PumpenSteuerung {
             System.out.println(e.getMessage());
         }
 
+        System.out.print(String.format("%8s", Integer.toBinaryString(steuerungSchalteEinAus & 0xFF)).replace(' ', '0') + "\t");
         return steuerungSchalteEinAus;
     }
 
